@@ -1,0 +1,95 @@
+/* BUTTON RESET */
+
+.btn-gradient,
+.btn-outline-custom{
+
+    display:inline-flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none !important;
+
+    cursor:pointer;
+
+    transition:all 0.4s ease;
+
+}
+
+/* GRADIENT BUTTON */
+
+.btn-gradient{
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #8b5cf6
+        );
+
+    color:white !important;
+
+    font-weight:600;
+
+    border:none;
+
+    box-shadow:
+        0 10px 30px rgba(56,189,248,0.25);
+
+}
+
+.btn-gradient:hover{
+
+    transform:translateY(-6px);
+
+    color:white !important;
+
+    box-shadow:
+        0 15px 40px rgba(139,92,246,0.4);
+
+}
+
+/* OUTLINE BUTTON */
+
+.btn-outline-custom{
+
+    padding:14px 32px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(12px);
+
+    color:white !important;
+
+    font-weight:500;
+
+}
+
+.btn-outline-custom:hover{
+
+    transform:translateY(-6px);
+
+    color:white !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #8b5cf6
+        );
+
+    border-color:transparent;
+
+    box-shadow:
+        0 15px 40px rgba(56,189,248,0.3);
+
+}

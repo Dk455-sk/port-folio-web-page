@@ -1,0 +1,35 @@
+.custom-navbar{
+
+    background:rgba(2,6,23,0.8);
+
+    backdrop-filter:blur(12px);
+
+    padding:16px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+}
+
+.navbar-brand{
+
+    font-size:1.5rem;
+    font-weight:700;
+
+    color:white !important;
+}
+
+.nav-link{
+
+    color:#cbd5e1 !important;
+
+    margin-left:20px;
+
+    transition:0.3s;
+}
+
+.nav-link:hover{
+
+    color:#38bdf8 !important;
+
+}

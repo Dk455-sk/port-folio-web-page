@@ -1,0 +1,185 @@
+:root{
+
+    --bg:#020617;
+
+    --bg-light:#0f172a;
+
+    --card-bg:rgba(255,255,255,0.05);
+
+    --primary:#38bdf8;
+
+    --secondary:#8b5cf6;
+
+    --text:#f8fafc;
+
+    --text-light:#cbd5e1;
+
+    --border:rgba(255,255,255,0.1);
+
+    --shadow:
+        0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+}
+
+/* GLOBAL SECTION */
+
+section{
+    padding:120px 0;
+
+    position:relative;
+}
+
+/* CONTAINER */
+
+.container{
+    position:relative;
+    z-index:2;
+}
+
+/* HEADINGS */
+
+h1,h2,h3,h4,h5,h6{
+
+    font-weight:700;
+
+    margin-bottom:15px;
+}
+
+/* PARAGRAPH */
+
+p{
+
+    color:var(--text-light);
+
+    margin-bottom:0;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    text-align:center;
+}
+
+/* SECTION DESCRIPTION */
+
+.section-description{
+
+    max-width:700px;
+
+    margin:0 auto 70px;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+}
+
+/* GRADIENT TEXT */
+
+.text-gradient{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+/* GLASS EFFECT */
+
+.glass-card{
+
+    background:var(--card-bg);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:24px;
+
+    box-shadow:var(--shadow);
+
+    transition:0.4s;
+}
+
+.glass-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:
+        rgba(56,189,248,0.4);
+}
+
+/* IMAGES */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* LINKS */
+
+a{
+    transition:0.3s;
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+        linear-gradient(
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius:20px;
+}

@@ -1,0 +1,104 @@
+/* GENERAL SECTIONS */
+
+.section-dark{
+
+    background:var(--bg-light);
+}
+
+/* SECTION SPACING */
+
+.section-padding{
+
+    padding:120px 0;
+}
+
+/* SECTION DESCRIPTION */
+
+.section-description{
+
+    max-width:700px;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:var(--text-light);
+
+    line-height:1.8;
+
+    margin-bottom:60px;
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:60px;
+}
+
+.timeline::before{
+
+    content:'';
+
+    position:absolute;
+
+    left:50%;
+
+    width:2px;
+
+    height:100%;
+
+    background:rgba(255,255,255,0.1);
+}
+
+/* TIMELINE ITEM */
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:50px;
+}
+
+/* BADGES */
+
+.tech-badge{
+
+    display:inline-block;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,0.08);
+
+    margin:5px;
+
+    color:var(--text-light);
+
+    font-size:14px;
+}
+
+
+/* EDUCATION */
+
+.education-icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.06);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+    color:var(--primary);
+}

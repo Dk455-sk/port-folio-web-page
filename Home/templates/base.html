@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Django Static -->
+    {% load static %}
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet"
+      href="{% static 'css/base.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'css/navbar.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'css/cards.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'css/buttons.css' %}">
+<link rel="stylesheet"
+      href="{% static 'css/hero.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'css/sections.css' %}">
+
+<link rel="stylesheet"
+      href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet"
+      href="{% static 'css/projects.css' %}">
+<link rel="stylesheet"
+      href="{% static 'css/about.css' %}">
+<link rel="stylesheet"
+      href="{% static 'css/skills.css' %}">   
+<link rel="stylesheet"
+      href="{% static 'css/contact.css' %}"> 
+<link rel="stylesheet"
+      href="{% static 'css/achievement.css' %}">  
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+            Write your name here
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">
+                        Skills
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">
+                        Projects
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="#achievements">
+
+                        Achievements
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- TYPING EFFECT -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const roles = [
+
+            "Django Developer",
+            "Freelancer",
+            "API Developer",
+            "Backend Engineer",
+            "Python Developer"
+
+        ];
+
+        let roleIndex = 0;
+
+        let charIndex = 0;
+
+        const typingElement =
+            document.getElementById("typing");
+
+        if(typingElement){
+
+            function typeText(){
+
+                if(charIndex < roles[roleIndex].length){
+
+                    typingElement.innerHTML +=
+                        roles[roleIndex].charAt(charIndex);
+
+                    charIndex++;
+
+                    setTimeout(typeText,100);
+
+                }else{
+
+                    setTimeout(eraseText,1500);
+
+                }
+
+            }
+
+            function eraseText(){
+
+                if(charIndex > 0){
+
+                    typingElement.innerHTML =
+                        roles[roleIndex].substring(0,charIndex-1);
+
+                    charIndex--;
+
+                    setTimeout(eraseText,50);
+
+                }else{
+
+                    roleIndex++;
+
+                    if(roleIndex >= roles.length){
+
+                        roleIndex = 0;
+
+                    }
+
+                    setTimeout(typeText,300);
+
+                }
+
+            }
+
+            typeText();
+
+        }
+
+        /* PROJECT FILTER */
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const projectItems =
+            document.querySelectorAll(".project-item");
+
+        if(filterButtons.length > 0){
+
+            filterButtons.forEach(button => {
+
+                button.addEventListener("click", () => {
+
+                    filterButtons.forEach(btn =>
+                        btn.classList.remove("active")
+                    );
+
+                    button.classList.add("active");
+
+                    const filter =
+                        button.getAttribute("data-filter");
+
+                    projectItems.forEach(item => {
+
+                        if(
+                            filter === "all" ||
+                            item.dataset.category === filter
+                        ){
+
+                            item.style.display = "block";
+
+                        }else{
+
+                            item.style.display = "none";
+
+                        }
+
+                    });
+
+                });
+
+            });
+
+        }
+
+    });
+
+
+let slides = document.querySelectorAll(".achievement-slide");
+let index = 0;
+
+function showSlide(){
+
+    slides.forEach(s => s.classList.remove("active"));
+
+    if(slides.length > 0){
+        slides[index].classList.add("active");
+        index = (index + 1) % slides.length;
+    }
+
+}
+
+if(slides.length > 0){
+    showSlide();
+    setInterval(showSlide, 3000);
+}
+</script>
+</body>
+</html>

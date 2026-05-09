@@ -1,0 +1,208 @@
+/* ABOUT SECTION */
+
+.about-wrapper{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+}
+
+/* ABOUT IMAGE */
+
+.about-image{
+
+    position:relative;
+}
+
+.about-image img{
+
+    width:100%;
+
+    border-radius:30px;
+
+    object-fit:cover;
+}
+
+/* ABOUT CONTENT */
+
+.about-content p{
+
+    color:var(--text-light);
+
+    line-height:1.9;
+
+    margin-top:20px;
+}
+
+/* COUNTERS */
+
+.counter-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:25px;
+
+    margin-top:40px;
+}
+
+.counter-card{
+
+    padding:30px;
+
+    text-align:center;
+}
+
+.counter-card h3{
+
+    font-size:2.5rem;
+
+    color:var(--primary);
+
+    font-weight:700;
+}
+
+.counter-card p{
+
+    color:var(--text-light);
+
+    margin-top:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:80px;
+}
+
+.timeline::before{
+
+    content:'';
+
+    position:absolute;
+
+    left:50%;
+
+    width:2px;
+
+    height:100%;
+
+    background:rgba(255,255,255,0.1);
+}
+
+/* ITEM */
+
+.timeline-item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:20px 40px;
+
+    margin-bottom:60px;
+}
+
+/* LEFT */
+
+.timeline-item.left{
+
+    left:0;
+
+    text-align:right;
+}
+
+/* RIGHT */
+
+.timeline-item.right{
+
+    left:50%;
+}
+
+/* DOT */
+
+.timeline-dot{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #8b5cf6
+        );
+
+    top:35px;
+}
+
+/* DOT LEFT */
+
+.timeline-item.left .timeline-dot{
+
+    right:-9px;
+}
+
+/* DOT RIGHT */
+
+.timeline-item.right .timeline-dot{
+
+    left:-9px;
+}
+
+/* YEAR */
+
+.timeline-year{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .about-wrapper{
+
+        grid-template-columns:1fr;
+    }
+
+    .timeline::before{
+
+        left:20px;
+    }
+
+    .timeline-item{
+
+        width:100%;
+
+        left:0 !important;
+
+        text-align:left !important;
+
+        padding-left:60px;
+    }
+
+    .timeline-dot{
+
+        left:11px !important;
+    }
+
+}
