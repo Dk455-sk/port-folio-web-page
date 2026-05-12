@@ -1,0 +1,202 @@
+/* CONTACT SECTION */
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:50px;
+
+    align-items:start;
+}
+
+/* LEFT SIDE */
+
+.contact-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+}
+
+/* CONTACT CARD */
+
+.contact-card{
+
+    padding:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    transition:0.4s;
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+}
+
+/* ICON */
+
+.contact-icon{
+
+    width:60px;
+    height:60px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            #38bdf8,
+            #8b5cf6
+        );
+
+    font-size:24px;
+}
+
+/* TEXT */
+
+.contact-text h4{
+
+    margin-bottom:8px;
+}
+
+.contact-text p{
+
+    color:var(--text-light);
+
+    margin:0;
+}
+
+/* FORM */
+
+.contact-form{
+
+    padding:40px;
+}
+
+/* INPUTS */
+
+.contact-form .form-control{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:14px;
+
+    margin-bottom:20px;
+}
+
+/* FOCUS */
+
+.contact-form .form-control:focus{
+
+    background:rgba(255,255,255,0.08);
+
+    border-color:#38bdf8;
+
+    box-shadow:none;
+
+    color:white;
+}
+
+/* PLACEHOLDER */
+
+.contact-form .form-control::placeholder{
+
+    color:#94a3b8;
+}
+
+/* CTA SECTION */
+
+.cta-box{
+
+    margin-top:100px;
+
+    padding:60px;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.cta-box::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(56,189,248,0.2),
+            rgba(139,92,246,0.2)
+        );
+
+    border-radius:50%;
+
+    top:-100px;
+    right:-100px;
+
+    filter:blur(80px);
+}
+
+/* FOOTER */
+
+.footer{
+
+    padding:40px 0;
+
+    border-top:
+        1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    margin-top:80px;
+}
+
+.footer p{
+
+    color:#94a3b8;
+
+    margin:0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+    }
+
+    .cta-box{
+
+        padding:40px 20px;
+    }
+
+}
