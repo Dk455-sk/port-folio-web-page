@@ -4,8 +4,7 @@ env/
 # Python Cache
 __pycache__/
 
-# Database
-db.sqlite3
+
 
 # Environment Variables
 .env
