@@ -9,9 +9,10 @@ __pycache__/
 # Environment Variables
 .env
 
-# Media Files
-media/
+
 
 # VS Code
 .vscode/
 
+# Static Collected Files
+staticfiles/
