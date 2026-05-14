@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
 <!-- HERO SECTION -->
 
 <section class="hero">
@@ -96,12 +96,12 @@
 
                 <div class="hero-image">
 
-                    {% if hero.profile_image %}
+                    <!-- {% if hero.profile_image %}
 
                     <img src="{{ hero.profile_image.url }}">
 
-                    {% endif %}
-
+                    {% endif %} -->
+                <img src="{% static 'images/hero.jpg' %}" alt="Hero Image">
                 </div>
 
             </div>
@@ -130,12 +130,12 @@
 
             <div class="about-image">
 
-                {% if about.profile_image %}
+                <!-- {% if about.profile_image %}
 
                 <img src="{{ about.profile_image.url }}">
 
-                {% endif %}
-
+                {% endif %} -->
+            <img src="{% static 'images/about.jpeg' %}" alt="About Image">
             </div>
 
             <!-- CONTENT -->
