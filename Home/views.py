@@ -65,6 +65,6 @@ def home(request):
 
     return render(
         request,
-        'index1.html',
+        'index.html',
         context
     )

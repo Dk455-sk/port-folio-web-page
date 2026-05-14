@@ -616,7 +616,60 @@
 
     </div>
 
-</section>           
+</section>   
+<!-- SERVICES -->
+<section id="services">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Services
+        </h2>
+
+        <p class="section-description">
+            Professional solutions I can build for clients and businesses.
+        </p>
+
+        <div class="row">
+
+            {% for service in services %}
+
+            <div class="col-md-4 mb-4">
+
+                <div class="glass-card p-4 h-100 text-center">
+
+                    <!-- ICON -->
+                    <div class="mb-3">
+
+                        {% if service.icon %}
+                        <i class="{{ service.icon }} fs-1 text-gradient"></i>
+                        {% else %}
+                        <i class="bi bi-code-slash fs-1 text-gradient"></i>
+                        {% endif %}
+
+                    </div>
+
+                    <!-- TITLE -->
+                    <h4 class="mt-3">
+                        {{ service.title }}
+                    </h4>
+
+                    <!-- DESCRIPTION -->
+                    <p class="mt-3 text-light">
+                        {{ service.description }}
+                    </p>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>        
 <!-- CONTACT -->
 
 <section id="contact">

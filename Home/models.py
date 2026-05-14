@@ -60,7 +60,6 @@ class Project(models.Model):
     solution = models.TextField(blank=True, null=True)
     impact = models.TextField(blank=True, null=True)
 
-    description = models.TextField()
 
     image = models.ImageField(
         upload_to='projects/',
