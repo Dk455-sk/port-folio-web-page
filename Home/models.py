@@ -46,18 +46,19 @@ class Skill(models.Model):
 class Project(models.Model):
 
     CATEGORY_CHOICES = (
-
         ('web', 'Web'),
-
         ('api', 'API'),
-
         ('fullstack', 'Full Stack'),
-
         ('ml', 'Machine Learning'),
-
+        ('ai','AI'),
+        ('da','Data Analysis')
     )
 
     title = models.CharField(max_length=200)
+
+    problem = models.TextField(blank=True, null=True)
+    solution = models.TextField(blank=True, null=True)
+    impact = models.TextField(blank=True, null=True)
 
     description = models.TextField()
 
@@ -92,7 +93,6 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-
         return self.title
     
 
