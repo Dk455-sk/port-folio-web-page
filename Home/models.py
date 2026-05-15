@@ -50,16 +50,27 @@ class Project(models.Model):
         ('api', 'API'),
         ('fullstack', 'Full Stack'),
         ('ml', 'Machine Learning'),
-        ('ai','AI'),
-        ('da','Data Analysis')
+        ('ai', 'AI'),
     )
 
     title = models.CharField(max_length=200)
 
-    problem = models.TextField(blank=True, null=True)
-    solution = models.TextField(blank=True, null=True)
-    impact = models.TextField(blank=True, null=True)
 
+
+    problem = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    solution = models.TextField(
+        blank=True,
+        null=True
+    )
+
+    impact = models.TextField(
+        blank=True,
+        null=True
+    )
 
     image = models.ImageField(
         upload_to='projects/',
@@ -71,6 +82,14 @@ class Project(models.Model):
         upload_to='project_videos/',
         blank=True,
         null=True
+    )
+
+    # NEW FIELD → static video filename
+    video_static = models.CharField(
+        max_length=200,
+        blank=True,
+        null=True,
+        help_text="Example: portfolio.mp4"
     )
 
     category = models.CharField(

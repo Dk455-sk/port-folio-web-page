@@ -342,62 +342,48 @@
         <div class="glass-card project-card h-100">
 
             <!-- MEDIA -->
-            <div class="project-media">
+           <div class="project-media">
 
-                {% if project.video %}
+            {% if project.video_static %}
 
-                <video class="project-video"
-                       autoplay
-                       muted
-                       loop
-                       playsinline
-                       preload="metadata"
-                       poster="{% static 'projects/default.jpg' %}">
+            <video class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline>
 
-                    <source src="{{ project.video.url }}" type="video/mp4">
+                <source src="{% static 'projects/' %}{{ project.video_static }}"
+                        type="video/mp4">
 
-                    Your browser does not support video.
+            </video>
 
-                </video>
+            {% elif project.video %}
 
-                {% elif project.image %}
+            <video class="project-video"
+                autoplay
+                muted
+                loop
+                playsinline>
 
-                <img src="{{ project.image.url }}"
-                     class="project-image"
-                     alt="{{ project.title }}">
+                <source src="{{ project.video.url }}"
+                        type="video/mp4">
 
-                {% else %}
+            </video>
 
-                <video class="project-video"
-                       autoplay
-                       muted
-                       loop
-                       playsinline
-                       preload="metadata"
-                       poster="{% static 'projects/default.jpg' %}">
+            {% elif project.image %}
 
-                    <source src="{% static 'projects/project3.mp4' %}" type="video/mp4">
+            <img src="{{ project.image.url }}"
+                class="project-image"
+                alt="{{ project.title }}">
 
-                    Your browser does not support video.
+            {% else %}
 
-                </video>
-                 <video class="project-video"
-                       autoplay
-                       muted
-                       loop
-                       playsinline
-                       preload="metadata"
-                       poster="{% static 'projects/default.jpg' %}">
+            <img src="{% static 'projects/default.jpg' %}"
+                class="project-image">
 
-                    <source src="{% static 'projects/project6.mp4' %}" type="video/mp4">
+            {% endif %}
 
-                    Your browser does not support video.
-
-                </video>
-
-                {% endif %}
-
-            </div>
+        </div>
 
             <!-- CONTENT -->
             <div class="p-4">
@@ -708,42 +694,48 @@
 
             <div class="contact-info">
 
-                {% for contact in contacts %}
+    {% for contact in contacts %}
 
-                <div class="glass-card contact-card">
+    <div class="glass-card contact-card">
 
-                    <!-- ICON -->
+        <div class="contact-icon">
+            <i class="{{ contact.icon }}"></i>
+        </div>
 
-                    <div class="contact-icon">
+        <div class="contact-text">
 
-                        <i class="{{ contact.icon }}"></i>
+            <h4>{{ contact.title }}</h4>
 
-                    </div>
+            {% if "@" in contact.value %}
+                <a href="mailto:{{ contact.value }}"
+                   class="text-decoration-none text-light">
+                    {{ contact.value }}
+                </a>
 
-                    <!-- TEXT -->
+            {% elif "http" in contact.value %}
+                <a href="{{ contact.value }}"
+                   target="_blank"
+                   class="text-decoration-none text-light">
+                    {{ contact.value }}
+                </a>
 
-                    <div class="contact-text">
+            {% elif "+" in contact.value %}
+                <a href="tel:{{ contact.value }}"
+                   class="text-decoration-none text-light">
+                    {{ contact.value }}
+                </a>
 
-                        <h4>
+            {% else %}
+                <p>{{ contact.value }}</p>
+            {% endif %}
 
-                            {{ contact.title }}
+        </div>
 
-                        </h4>
+    </div>
 
-                        <p>
+    {% endfor %}
 
-                            {{ contact.value }}
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                {% endfor %}
-
-            </div>
-
+</div>
             <!-- RIGHT SIDE -->
 
             <div class="glass-card contact-form">
